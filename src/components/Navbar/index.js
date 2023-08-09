@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link as LinkR } from 'react-router-dom';
 import styled from 'styled-components';
+import { DiCssdeck } from "react-icons/di";
+
+
+
 
 const Nav = styled.div`
   background-color: ${({theme}) => theme.card_light};
@@ -107,18 +111,39 @@ const GithubButton = styled.button`
   @media screen and (max-width: 640px){
     font-size: 0.8rem;
   }
+`;
 
-
-`
+export const Span = styled.div`
+  padding: 0 4px;
+  font-weight: bold;
+  font-size: 18px;
+`;
 
 const Navbar = () => {
   return (
       <Nav>
         <NavContainer>
-          <NavLogo>Logo</NavLogo>
+          <NavLogo to="/">
+                    <a
+                      style= {
+                        {
+                          display: "flex",
+                          alignItems: "center",
+                          color: "White",
+                          marginBottom: "20",
+                          cursor: "pointer"
+                        }
+                      }>
+                        <DiCssdeck size="3rem" /><Span>Portfolio</Span>
+                    </a>
+            </NavLogo>
           <MobileIcon></MobileIcon>
           <NavItems>
-            <NavLink>Home</NavLink>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#skill">Skill</NavLink>
+            <NavLink href="#experience">Experience</NavLink>
+            <NavLink href="#portfolio">Portfolio</NavLink>
+            <NavLink href="#education">Education</NavLink>
           </NavItems>
           <ButtonContainer>
             <GithubButton>Github Profile</GithubButton>
